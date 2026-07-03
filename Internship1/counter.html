@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanteza | Premium Vault Counter</title>
+    <link rel="stylesheet" href="counter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="index.html" class="back-home-link">&larr; Back to Showcase</a>
+
+    <div class="counter-container">
+        <div class="counter-header">
+            <h2>Item Vault</h2>
+            <p>Adjust quantity requirements for your private shipment reservation.</p>
+        </div>
+
+        <div class="counter-display" id="counterValue">0</div>
+
+        <div class="counter-controls">
+            <button class="ctrl-btn" id="decrementBtn" aria-label="Decrease count">&minus;</button>
+            <button class="ctrl-btn reset-btn" id="resetBtn" aria-label="Reset count">Reset</button>
+            <button class="ctrl-btn" id="incrementBtn" aria-label="Increase count">&plus;</button>
+        </div>
+    </div>
+
+    <script src="counter.js"></script>
+</body>
+</html>

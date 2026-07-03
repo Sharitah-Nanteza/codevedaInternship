@@ -1,0 +1,150 @@
+:root {
+    --bg-dark: #0f0c0d;
+    --card-light: #fcf9f5;
+    --espresso-dark: #231b18;
+    --gold-accent: #bfa043;
+    --text-muted: #7d726e;
+    --error-red: #c0392b;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[v-cloak] { display: none; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.back-home-link {
+    position: absolute;
+    top: 3rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+.back-home-link:hover { color: var(--gold-accent); }
+
+.api-container {
+    background-color: var(--card-light);
+    color: var(--espresso-dark);
+    max-width: 500px;
+    width: 100%;
+    padding: 4rem 3rem;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(191, 160, 67, 0.12);
+}
+
+.api-header { text-align: center; margin-bottom: 2rem; }
+.api-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+.api-header p { color: var(--text-muted); font-size: 0.8rem; line-height: 1.5; }
+
+/* --- Input Bar & Debounce Indicator --- */
+.search-box-wrapper {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+.search-input {
+    width: 100%;
+    background-color: rgba(35, 27, 24, 0.03);
+    border: 1px solid rgba(35, 27, 24, 0.12);
+    padding: 1rem 1.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    outline: none;
+    color: var(--espresso-dark);
+    transition: var(--transition);
+}
+.search-input:focus {
+    border-color: var(--gold-accent);
+    background-color: #ffffff;
+}
+.debounce-indicator {
+    position: absolute;
+    right: 1rem;
+    top: 1.1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-accent);
+    font-weight: 600;
+}
+
+/* --- Feedback Windows --- */
+.state-window {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    font-family: var(--font-serif);
+}
+.error-state { color: var(--error-red); }
+.error-icon { display: block; font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+.spinner {
+    width: 28px; height: 28px;
+    border: 2px solid rgba(191, 160, 67, 0.15);
+    border-top-color: var(--gold-accent);
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    animation: loop 0.8s linear infinite;
+}
+@keyframes loop { to { transform: rotate(360deg); } }
+
+/* --- Dynamic Render Profiles --- */
+.profile-identity { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2rem; }
+.avatar { width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(191, 160, 67, 0.3); }
+.identity-text h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; }
+.github-handle { font-size: 0.8rem; color: var(--gold-accent); text-decoration: none; display: inline-block; margin-bottom: 0.4rem; }
+.bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; font-weight: 400; }
+
+.metrics-row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(35, 27, 24, 0.08);
+    border-bottom: 1px solid rgba(35, 27, 24, 0.08);
+    padding: 1.2rem 0;
+    margin-bottom: 2rem;
+}
+.metric-item { text-align: center; flex: 1; }
+.metric-val { display: block; font-family: var(--font-serif); font-size: 1.6rem; color: var(--espresso-dark); }
+.metric-lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 500; }
+
+.repos-section h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--espresso-dark);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(35, 27, 24, 0.05);
+    padding-bottom: 0.4rem;
+}
+.repo-list { list-style: none; }
+.repo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+}
+.repo-name { color: var(--espresso-dark); text-decoration: none; font-weight: 500; transition: var(--transition); }
+.repo-name:hover { color: var(--gold-accent); }
+.repo-meta { font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 1rem; }

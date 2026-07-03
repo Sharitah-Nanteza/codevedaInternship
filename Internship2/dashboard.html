@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanteza | Brand Atelier Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            bg: '#0f0c0d',
+                            card: '#161214',
+                            border: '#231b1e'
+                        },
+                        champagne: {
+                            light: '#fbf9f6',
+                            gold: '#bfa043',
+                            bright: '#d4af37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-obsidian-bg font-sans text-champagne-light min-height-screen antialiased selection:bg-champagne-gold selection:text-obsidian-bg">
+
+    <header class="border-b border-obsidian-border max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="font-serif text-2xl font-semibold tracking-[6px] text-champagne-light">NANTEZA</div>
+        <a href="index.html" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-champagne-gold transition-all duration-300">
+            &larr; Back to Showcase
+        </a>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="mb-12">
+            <span class="text-xs uppercase tracking-[4px] text-champagne-gold font-medium">Atelier Workspace</span>
+            <h1 class="font-serif text-4xl font-light tracking-wide mt-2 text-white">Client Portfolio Overview</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-obsidian-card border border-obsidian-border p-6 rounded-sm shadow-xl">
+                <span class="text-xs uppercase tracking-wider text-zinc-400 block mb-2">Total Managed Allocations</span>
+                <span class="font-serif text-3xl font-light text-champagne-gold">14 Active Cases</span>
+            </div>
+            <div class="bg-obsidian-card border border-obsidian-border p-6 rounded-sm shadow-xl">
+                <span class="text-xs uppercase tracking-wider text-zinc-400 block mb-2">Pending Custom Formulations</span>
+                <span class="font-serif text-3xl font-light text-white">3 Blends</span>
+            </div>
+            <div class="bg-obsidian-card border border-obsidian-border p-6 rounded-sm shadow-xl">
+                <span class="text-xs uppercase tracking-wider text-zinc-400 block mb-2">Valuation Metrics</span>
+                <span class="font-serif text-3xl font-light text-champagne-gold">UGX 42.5M</span>
+            </div>
+        </div>
+
+        <div class="bg-obsidian-card border border-obsidian-border rounded-sm shadow-xl overflow-hidden">
+            <div class="p-6 border-b border-obsidian-border">
+                <h3 class="font-serif text-xl tracking-wide text-white">Recent Allocation Requests</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-black/20 text-xs uppercase tracking-wider text-zinc-400 border-b border-obsidian-border">
+                            <th class="p-4 font-medium">Designated Client</th>
+                            <th class="p-4 font-medium">Requested Line</th>
+                            <th class="p-4 font-medium">Scent Profiling Status</th>
+                            <th class="p-4 font-medium text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-obsidian-border/50 text-zinc-300">
+                        <tr class="hover:bg-white/[0.02] transition-colors">
+                            <td class="p-4 font-medium text-white">Elena Nanteza</td>
+                            <td class="p-4">Oud Imperial & statement earpins</td>
+                            <td class="p-4"><span class="inline-block px-2 py-0.5 text-[10px] uppercase font-semibold tracking-wider bg-emerald-950 text-emerald-400 border border-emerald-800 rounded-sm">Curated</span></td>
+                            <td class="p-4 text-right"><button class="text-xs text-champagne-gold hover:text-white transition-colors">Review Allocation</button></td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02] transition-colors">
+                            <td class="p-4 font-medium text-white">Bagiira Lainey</td>
+                            <td class="p-4">Daily Refresh Oils</td>
+                            <td class="p-4"><span class="inline-block px-2 py-0.5 text-[10px] uppercase font-semibold tracking-wider bg-amber-950 text-amber-400 border border-amber-800 rounded-sm">Pending</span></td>
+                            <td class="p-4 text-right"><button class="text-xs text-champagne-gold hover:text-white transition-colors">Review Allocation</button></td>
+                        </tr>
+                        <tr class="hover:bg-white/[0.02] transition-colors">
+                            <td class="p-4 font-medium text-white">Lionel Mulabbi</td>
+                            <td class="p-4">Statement Gold Necklaces</td>
+                            <td class="p-4"><span class="inline-block px-2 py-0.5 text-[10px] uppercase font-semibold tracking-wider bg-zinc-900 text-zinc-400 border border-zinc-700 rounded-sm">Archived</span></td>
+                            <td class="p-4 text-right"><button class="text-xs text-champagne-gold hover:text-white transition-colors">Review Allocation</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

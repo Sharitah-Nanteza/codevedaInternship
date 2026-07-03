@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanteza | Developer Radar API</title>
+    <link rel="stylesheet" href="github.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <a href="index.html" class="back-home-link">&larr; Back to Showcase</a>
+
+    <div id="app" v-cloak>
+        <div class="api-container">
+            <div class="api-header">
+                <h2>Developer Radar</h2>
+                <p>Query global technical collaborators via the GitHub REST API Engine.</p>
+            </div>
+
+            <div class="search-box-wrapper">
+                <input 
+                    type="text" 
+                    v-model="username" 
+                    @input="onSearchInput"
+                    placeholder="Type GitHub username (e.g., torvalds)..."
+                    class="search-input"
+                />
+                <span class="debounce-indicator" v-if="isTyping">Typing...</span>
+            </div>
+
+            <div class="state-window loading-state" v-if="isLoading">
+                <div class="spinner"></div>
+                <p>Accessing GitHub Core Nodes...</p>
+            </div>
+
+            <div class="state-window error-state" v-else-if="errorMessage">
+                <span class="error-icon">&#9888;</span>
+                <p>{{ errorMessage }}</p>
+            </div>
+
+            <div class="state-window empty-state" v-else-if="!profile">
+                <p>Awaiting developer designation parameters.</p>
+            </div>
+
+            <div class="profile-card" v-else>
+                <div class="profile-identity">
+                    <img :src="profile.avatar_url" :alt="profile.name" class="avatar" />
+                    <div class="identity-text">
+                        <h3>{{ profile.name || profile.login }}</h3>
+                        <a :href="profile.html_url" target="_blank" class="github-handle">@{{ profile.login }}</a>
+                        <p class="bio" v-if="profile.bio">{{ profile.bio }}</p>
+                    </div>
+                </div>
+
+                <div class="metrics-row">
+                    <div class="metric-item">
+                        <span class="metric-val">{{ profile.public_repos }}</span>
+                        <span class="metric-lbl">Repositories</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">{{ profile.followers }}</span>
+                        <span class="metric-lbl">Followers</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">{{ profile.following }}</span>
+                        <span class="metric-lbl">Following</span>
+                    </div>
+                </div>
+
+                <div class="repos-section" v-if="repos.length > 0">
+                    <h4>Featured Public Nodes</h4>
+                    <ul class="repo-list">
+                        <li v-for="repo in repos" :key="repo.id" class="repo-item">
+                            <a :href="repo.html_url" target="_blank" class="repo-name">{{ repo.name }}</a>
+                            <div class="repo-meta">
+                                <span class="repo-lang" v-if="repo.language">● {{ repo.language }}</span>
+                                <span class="repo-stars">★ {{ repo.stargazers_count }}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="github.js"></script>
+</body>
+</html>

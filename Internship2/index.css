@@ -1,0 +1,189 @@
+:root {
+    --bg-dark: #0f0c0d;
+    --card-blend: #fcf9f5;
+    --espresso-text: #231b18;
+    --gold-accent: #bfa043;
+    --text-light: #f8f3f5;
+    --text-muted: #8c827e;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-sans);
+    color: var(--text-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Clean Navigation Layout --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    letter-spacing: 5px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover, .nav-links a.active-link {
+    color: var(--gold-accent);
+}
+
+/* --- Viewport Canvas --- */
+.view-container {
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    min-height: 50vh;
+}
+
+.page-content h1 {
+    font-family: var(--font-serif);
+    font-size: 3.4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gold-accent);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+/* --- State Cards & Forms --- */
+.state-modifier-card, .status-banner, .contact-box {
+    background-color: var(--card-blend);
+    color: var(--espresso-text);
+    padding: 2.5rem;
+    border-radius: 2px;
+    margin-top: 2rem;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+}
+
+.state-modifier-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-meta {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.input-inline {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-inline input, .contact-box textarea {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(35, 27, 24, 0.2);
+    padding: 0.8rem 1rem;
+    font-family: var(--font-sans);
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.input-inline button, .submit-btn {
+    background-color: var(--espresso-text);
+    color: var(--card-blend);
+    border: none;
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.input-inline button:hover, .submit-btn:hover {
+    background-color: var(--gold-accent);
+    color: #ffffff;
+}
+
+.status-banner p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.contact-box textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+.toast-success {
+    color: #27ae60;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* --- SPA Route Motion Transition Hooks --- */
+.fade-enter-from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.spa-footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    margin-top: 4rem;
+}

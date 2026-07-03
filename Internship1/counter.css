@@ -1,0 +1,150 @@
+/* --- The Perfect Luxury Blend Palette --- */
+:root {
+    --bg-dark-blend: #0f0c0d;     /* Deep charcoal-obsidian backdrop */
+    --card-light-blend: #fcf9f5;   /* Warm, soft champagne ivory card */
+    --espresso-dark: #231b18;     /* Luxurious dark font for high contrast */
+    --gold-accent: #bfa043;       /* Premium brand gold */
+    --gold-bright: #d4af37;       /* Polished interaction gold */
+    --text-muted: #7d726e;        /* Balanced earth-toned descriptive text */
+    
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --border-subtle: rgba(191, 160, 67, 0.12);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark-blend);
+    font-family: var(--font-sans);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+/* --- Clean, Elegant Return Link --- */
+.back-home-link {
+    position: absolute;
+    top: 3rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.back-home-link:hover {
+    color: var(--gold-accent);
+}
+
+/* --- The Blend: Soft Ivory Card floating over Dark Backdrop --- */
+.counter-container {
+    background-color: var(--card-light-blend);
+    border: 1px solid var(--border-subtle);
+    padding: 4.5rem 3.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    /* Soft, deep ambient shadow so the card cleanly pops off the dark floor */
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+.counter-header {
+    margin-bottom: 2rem;
+}
+
+.counter-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--espresso-dark);
+    margin-bottom: 0.6rem;
+}
+
+.counter-header p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* --- Large Clean Numerator Display --- */
+.counter-display {
+    font-family: var(--font-serif);
+    font-size: 7rem;
+    font-weight: 300;
+    color: var(--espresso-dark);
+    margin: 1.5rem 0;
+    line-height: 1;
+    transition: var(--transition);
+    user-select: none;
+}
+
+/* --- Soft Control Button Layout --- */
+.counter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.ctrl-btn {
+    background: transparent;
+    border: 1px solid rgba(35, 27, 24, 0.12);
+    color: var(--espresso-dark);
+    font-size: 1.3rem;
+    padding: 0.9rem;
+    flex: 1;
+    cursor: pointer;
+    transition: var(--transition);
+    outline: none;
+}
+
+.ctrl-btn:hover {
+    border-color: var(--gold-accent);
+    background-color: rgba(191, 160, 67, 0.05);
+    color: var(--gold-accent);
+}
+
+.ctrl-btn:active {
+    transform: scale(0.97);
+}
+
+/* Reset button styling balance */
+.reset-btn {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.reset-btn:hover {
+    color: var(--espresso-dark);
+    border-color: var(--espresso-dark);
+    background: transparent;
+}
+
+/* Disabled State Rules when locked at 0 */
+.ctrl-btn:disabled {
+    opacity: 0.15;
+    cursor: not-allowed;
+    border-color: rgba(35, 27, 24, 0.08);
+    color: var(--espresso-dark);
+    transform: none;
+    background: transparent;
+}
