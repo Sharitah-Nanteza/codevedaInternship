@@ -1,15 +1,22 @@
 {
-  "name": "internship3",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@nanteza/sharitah-custom-components",
+  "version": "1.0.0",
   "type": "module",
+  "description": "An accessible custom component library featuring an ARIA-compliant Modal component.",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
@@ -26,6 +33,18 @@
     "globals": "^17.7.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.62.0",
-    "vite": "^8.1.1"
+    "vite": "^8.1.1",
+    "storybook": "^10.4.6",
+    "@storybook/react-vite": "^10.4.6",
+    "@chromatic-com/storybook": "^5.2.1",
+    "@storybook/addon-vitest": "^10.4.6",
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/addon-docs": "^10.4.6",
+    "@storybook/addon-mcp": "^0.6.0",
+    "eslint-plugin-storybook": "^10.4.6",
+    "vitest": "^4.1.10",
+    "playwright": "^1.61.1",
+    "@vitest/browser-playwright": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.10"
   }
 }

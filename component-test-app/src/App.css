@@ -1,4 +1,4 @@
-/* .counter {
+.counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -181,85 +181,4 @@
     right: 0;
     border-right-color: var(--border);
   }
-} */
-
-
-/* Reset and Container setup */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Fix the overlapping heading */
-h1 {
-  font-size: 2.2rem;
-  line-height: 1.2;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-}
-/* Ensure the image container constraints the image beautifully */
-.image-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* Button Layouts */
-.card {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-button {
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #0052a3;
-}
-
-/* Clean Data List view */
-.data-list {
-  margin-top: 30px;
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  max-width: 400px;
-  width: 100%;
-}
-
-.data-list p {
-  margin: 6px 0;
-  color: #555;
 }
